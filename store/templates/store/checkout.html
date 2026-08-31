@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+</head>
+
+<body>
+
+<h1>Checkout</h1>
+
+<h2>{{ product.name }}</h2>
+
+<p>Price: Rs. {{ product.price }}</p>
+
+<form action="{% url 'checkout' product.id %}" method="POST">
+
+    {% csrf_token %}
+
+    <button type="submit">
+        Pay with eSewa
+    </button>
+
+</form>
+
+</body>
+</html>
